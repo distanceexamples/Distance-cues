@@ -87,7 +87,7 @@ As noted above, **Effort** is missing from the data.  With cue count surveys, ef
 conversion.factor <- convert_units("meter", NULL, "hectare")
 wren_cuecount$Effort <- wren_cuecount$Search.time
 wrensong.hr <- ds(wren_cuecount, transect="point", key="hr", adjustment=NULL, 
-                  truncation=100)
+                  truncation=100, convert_units = conversion.factor)
 ```
 
 Visually inspect the fitted detection function with the `plot()` function, specifying the cutpoints histogram with argument `breaks` (Figure \@ref(fig:fit)).
